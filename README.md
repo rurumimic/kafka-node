@@ -19,7 +19,7 @@ producer &amp; consumer node for kafka
 **node 1**
 
 ```bash
-# 아이피는 vagrantfile에서 설정한 100+1이다.
+# 아이피는 dhcp로 설정되었다.
 $ docker swarm init --advertise-addr 172.28.128.3
 
 Swarm initialized: current node (hfnp52yy4dr4wwsk29uaanoex) is now a manager.
@@ -39,7 +39,14 @@ This node joined a swarm as a worker.
 
 ```bash
 $ docker node ls
+
 ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
 ihicuxdspiawl00t8aelh6uo4 *   ubuntu-xenial       Ready               Active              Leader              18.09.0
 p2fca9qr6e8wx13zps1w0uskn     ubuntu-xenial       Ready               Active                                  18.09.0
 ```
+
+## Kafka
+
+카프카를 위한 도커파일을 만든다.
+
+[kafka-docker#dockerfile](https://github.com/rurumimic/kafka-docker#dockerfile)
